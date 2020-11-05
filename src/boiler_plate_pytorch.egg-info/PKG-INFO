@@ -1,5 +1,5 @@
 Metadata-Version: 2.1
-Name: boiler-plate
+Name: boiler-plate-pytorch
 Version: 0.0.1
 Summary: A python package that contains PyTorch boilerplate code for different use cases
 Home-page: https://github.com/bipinKrishnan/boilerplate

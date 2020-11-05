@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="boiler_plate", 
+    name="boiler-plate-pytorch", 
     version="0.0.1",
     author="Bipin Krishnan P",
     author_email="bipinkrishna.p@gmail.com",
