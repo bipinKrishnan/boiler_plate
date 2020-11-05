@@ -1,8 +1,0 @@
-README.md
-setup.py
-boiler_plate_scrape.egg-info/PKG-INFO
-boiler_plate_scrape.egg-info/SOURCES.txt
-boiler_plate_scrape.egg-info/dependency_links.txt
-boiler_plate_scrape.egg-info/top_level.txt
-boilerplate/__init__.py
-boilerplate/trainer.py
