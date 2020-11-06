@@ -33,6 +33,20 @@ class Trainer:
 
     return loss
 
+  def check_dataloader(self, dataloader, num_batch):
+    for i, (data, label) in enumerate(dataloader):
+      print(f'Batch: {i+1}   data_size: {data.shape}   label_size: {label.shape}')
+      if (i+1)==num_batch:
+        break
+
+  def check_loader(self, num_batches=3):
+    print("Training set")
+    self.check_dataloader(self.trainloader, num_batches)
+    
+    if self.valloader:
+      print("\nValidation set")
+      self.check_dataloader(self.valloader, num_batches)
+
   def fit(self, epochs: int):
     for epoch in tqdm(range(epochs), total=epochs, leave=False, disable=self.hide_pbar):
       train_loss = self.training_loop()

@@ -5,13 +5,13 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="boiler-plate-pytorch", 
-    version="0.0.1",
+    version="0.0.2",
     author="Bipin Krishnan P",
     author_email="bipinkrishna.p@gmail.com",
     description="A python package that contains PyTorch boilerplate code for different use cases",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/bipinKrishnan/boilerplate",
+    url="https://github.com/bipinKrishnan/boiler_plate",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
