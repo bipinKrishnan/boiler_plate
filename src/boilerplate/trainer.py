@@ -1,7 +1,8 @@
+import torch
 from tqdm.notebook import tqdm
 
 class Trainer:
-  def __init__(self, model, train_loader, optim, loss, val_loader=None, device='cpu', hide_pbar: bool=False):
+  def __init__(self, model, optim, loss, train_loader, val_loader=None, device='cpu', hide_pbar: bool=False):
     self.model = model.to(device)
     self.trainloader = train_loader
     self.valloader = val_loader
@@ -29,17 +30,16 @@ class Trainer:
 
     return out, loss
 
-  def training_loop(self, dataloader):
+  def training_loop(self):
     self.model.train()
-    for i, (data, label) in tqdm(enumerate(dataloader), total=len(self.trainloader), leave=False, disable=self.hide_pbar):
+    for i, (data, label) in tqdm(enumerate(self.trainloader), total=len(self.trainloader), leave=False, disable=self.hide_pbar):
       out, loss = self.train_step(data, label)
 
     return out, loss
 
-  def validation_loop(self, dataloader):
-    with torch.no_grad():
-      for i, (data, label) in tqdm(enumerate(dataloader), total=len(self.valloader), leave=False, disable=self.hide_pbar):
-        out, loss = self.val_step(data, label)
+  def validation_loop(self):
+    for i, (data, label) in tqdm(enumerate(self.valloader), total=len(self.valloader), leave=False, disable=self.hide_pbar):
+      out, loss = self.val_step(data, label)
 
     return out, loss
 
@@ -59,10 +59,10 @@ class Trainer:
 
   def fit(self, epochs: int):
     for epoch in tqdm(range(epochs), total=epochs, leave=False, disable=self.hide_pbar):
-      train_loss = self.training_loop(self.trainloader)[1]
+      train_loss = self.training_loop()[1]
 
       if self.valloader:
-        val_loss = self.validation_loop(self.valloader)[1]
+        val_loss = self.validation_loop()[1]
         print(f'epoch: {epoch+1}\ttrain_loss: {train_loss}\tval_loss: {val_loss}')
       else:
         print(f'epoch: {epoch+1}\ttrain_loss: {train_loss}')
