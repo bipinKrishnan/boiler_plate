@@ -72,7 +72,7 @@ class Trainer:
       pred = self.model(input_tensor)
       return pred
 
-  def check_run(self, n_batch):
+  def sanity_check(self, n_batch):
     print("Training")
     for i, (data_t, label_t) in enumerate(self.trainloader):
       _, loss_t = self.train_step(data_t, label_t)

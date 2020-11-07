@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="boiler-plate-pytorch", 
-    version="0.0.4",
+    version="0.0.5",
     author="Bipin Krishnan P",
     author_email="bipinkrishna.p@gmail.com",
     description="A python package that contains PyTorch boilerplate code for different use cases",
