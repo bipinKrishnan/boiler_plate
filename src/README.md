@@ -45,5 +45,7 @@ This library aims at replacing boilerplate code that occur while training neural
 
     ###Train the model
     trainer1.fit(2)
+    
+    #####Use trainer.predict() and pass in a tensor for making prediction after the training is over
      
  ```
