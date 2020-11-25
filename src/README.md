@@ -8,6 +8,7 @@ This library aims at replacing boilerplate code that occur while training neural
 ### Usage
 ```python
 
+     ###Import the Trainer from the library
      from boilerplate import Trainer
      
      ###Create the dataloader
