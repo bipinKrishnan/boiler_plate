@@ -6,4 +6,8 @@ This library aims at replacing boilerplate code that occur while training neural
       pip install boiler_plate_pytorch
       
 ### Usage
+```python
+
      from boilerplate import Trainer
+     
+ ```
