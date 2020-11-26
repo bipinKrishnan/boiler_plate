@@ -7,8 +7,13 @@ This library aims at replacing boilerplate code that occur while training neural
       
 ### Usage
 ```python
+     from torch import nn
+     from torch import optim
+     from torchvision.datasets import MNIST
+     from torch.utils.data import DataLoader
+     from torchvision.transforms import transforms
 
-     ###Import the Trainer from the library
+     ###Import the Trainer from the boilerplate library
      from boilerplate import Trainer
      
      ###Create the dataloader
